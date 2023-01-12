@@ -19,6 +19,7 @@ const Auth = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginRight: "145px",
       }}
     >
       <Form
