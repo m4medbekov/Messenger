@@ -1,15 +1,14 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import dotenv from "dotenv";
+import sequelize, { Sequelize } from "sequelize";
+import cookieParser, { CookieParseOptions } from "cookie-parser";
 
-dotenv.config();
+const PORT = process.env.PORT || 8080;
 
 const app: Express = express();
-const port = process.env.PORT;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
-});
+app.listen(PORT, () => console.log(`Server is connected on ${PORT}`));
