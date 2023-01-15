@@ -1,4 +1,5 @@
 import { Sequelize, DataTypes } from "sequelize";
+import { userModel } from "./userModel";
 
 const sequelize = new Sequelize(
   `postgres://postgres:6867@localhost:5433/messenger`,
@@ -17,6 +18,6 @@ sequelize
 const db = {
   Sequelize,
   sequelize,
-  users: require("./userModel")(sequelize, DataTypes),
+  users: userModel(sequelize, DataTypes),
 };
 export default db;

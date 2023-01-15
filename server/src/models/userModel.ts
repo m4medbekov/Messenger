@@ -1,5 +1,5 @@
 //user model
-export default (
+export const userModel = (
   sequelize: {
     define: (
       arg0: string,
