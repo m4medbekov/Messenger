@@ -2,8 +2,14 @@ import { Sequelize, DataTypes } from "sequelize";
 import { userModel } from "./userModel";
 
 const sequelize = new Sequelize(
-  `postgres://postgres:6867@localhost:5433/messenger`,
-  { dialect: "postgres" }
+  "messenger",
+  "postgres",
+  "6867",
+  {
+    host: "localhost",
+    dialect: "postgres",
+  }
+  // `postgres://postgres:6867@localhost:5433/messenger`,
 );
 
 sequelize
